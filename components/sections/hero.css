@@ -1,0 +1,153 @@
+/* Hero Section — первый экран */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Контент */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Кнопки */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: all 0.2s var(--ease, cubic-bezier(.22,1,.36,1));
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.hero-btn-primary {
+  background: var(--accent, #6366f1);
+  color: #fff;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.hero-btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Варианты фона */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--accent, #6366f1), var(--accent-2, #8b5cf6));
+}
+
+.hero-dark {
+  background: var(--night, #0a0a0f);
+}
+
+.hero-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Варианты расположения */
+.hero-left .hero-content {
+  text-align: left;
+  margin-left: 0;
+}
+
+.hero-left .hero-cta {
+  justify-content: flex-start;
+}
+
+.hero-split {
+  flex-direction: row;
+  text-align: left;
+  max-width: 1200px;
+}
+
+.hero-split .hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-split .hero-image {
+  flex: 1;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-lg, 24px);
+}
+
+@media (max-width: 768px) {
+  .hero-split {
+    flex-direction: column;
+  }
+  
+  .hero-split .hero-image {
+    min-height: 250px;
+  }
+}

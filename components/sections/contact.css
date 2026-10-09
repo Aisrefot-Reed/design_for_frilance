@@ -1,0 +1,92 @@
+/* Contact Section — контакты */
+
+.contact {
+  padding: 4rem 1rem;
+  background: var(--surface, #fff);
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.contact-header p {
+  color: var(--muted, #666);
+  font-size: 1.125rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-card {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg, #f9fafb);
+  border-radius: var(--radius-lg, 24px);
+  transition: transform 0.2s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  background: var(--accent, #6366f1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.contact-card p {
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.contact-card a {
+  color: var(--accent, #6366f1);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}

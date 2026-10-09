@@ -1,0 +1,66 @@
+/* Spotlight Card — карточка с эффектом прожектора */
+
+.spotlight {
+  position: relative;
+  background: var(--surface, #fff);
+  border-radius: var(--radius-lg, 24px);
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.2s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.spotlight:hover {
+  transform: translateY(-4px);
+}
+
+/* Эффект прожектора */
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    var(--spotlight-color, rgba(99, 102, 241, 0.15)) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+.spotlight h3 {
+  position: relative;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.spotlight p {
+  position: relative;
+  margin: 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Варианты */
+.spotlight-dark {
+  background: var(--night, #1a1a1a);
+  color: #fff;
+}
+
+.spotlight-dark p {
+  color: rgba(255,255,255,0.6);
+}
+
+.spotlight-dark::before {
+  --spotlight-color: rgba(255,255,255,0.1);
+}
+
+.spotlight-accent::before {
+  --spotlight-color: var(--accent, rgba(99, 102, 241, 0.2));
+}

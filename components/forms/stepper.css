@@ -1,0 +1,62 @@
+/* Stepper — пошаговый ввод */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepper-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface, #fff);
+  border: 2px solid var(--border, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.stepper-step.active .stepper-circle {
+  background: var(--accent, #6366f1);
+  border-color: var(--accent, #6366f1);
+  color: #fff;
+}
+
+.stepper-step.completed .stepper-circle {
+  background: var(--accent, #6366f1);
+  border-color: var(--accent, #6366f1);
+  color: #fff;
+}
+
+.stepper-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted, #666);
+}
+
+.stepper-step.active .stepper-label {
+  color: var(--fg, #000);
+}
+
+.stepper-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border, #e5e7eb);
+  max-width: 100px;
+}
+
+.stepper-line.completed {
+  background: var(--accent, #6366f1);
+}

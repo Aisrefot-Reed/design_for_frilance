@@ -1,0 +1,41 @@
+/* Typewriter — эффект печатной машинки */
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--accent, #6366f1);
+  animation: 
+    typewriter 3s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  width: 0;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent, #6366f1); }
+}
+
+/* Варианты скорости */
+.typewriter-slow {
+  animation: 
+    typewriter 5s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+.typewriter-fast {
+  animation: 
+    typewriter 1.5s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Без курсора */
+.typewriter-no-caret {
+  border-right: none;
+  animation: typewriter 3s steps(40, end) forwards;
+}

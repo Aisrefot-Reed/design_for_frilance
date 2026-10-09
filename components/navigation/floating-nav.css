@@ -1,0 +1,59 @@
+/* Floating Navbar — плавающая навигация */
+
+.floating-nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.floating-nav:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.floating-nav a {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fg, #000);
+  border-radius: 999px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.floating-nav a:hover {
+  background: var(--bg, #f9fafb);
+}
+
+.floating-nav a.active {
+  background: var(--accent, #6366f1);
+  color: #fff;
+}
+
+/* Варианты */
+.floating-nav-dark {
+  background: rgba(0,0,0,0.8);
+}
+
+.floating-nav-dark a {
+  color: #fff;
+}
+
+.floating-nav-dark a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.floating-nav-dark a.active {
+  background: var(--accent, #6366f1);
+}

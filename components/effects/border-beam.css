@@ -1,0 +1,58 @@
+/* Border Beam — бегущий луч по границе */
+
+.border-beam {
+  position: relative;
+  border-radius: var(--radius-lg, 24px);
+  background: var(--surface, #fff);
+  overflow: hidden;
+  padding: 2px;
+}
+
+.border-beam::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    var(--beam-angle, 135deg),
+    transparent 0%,
+    transparent 40%,
+    var(--beam-color, var(--accent, #6366f1)) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 250% 250%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: beam-move 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes beam-move {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 250% 250%; }
+}
+
+/* Варианты */
+.border-beam-fast::before {
+  animation-duration: 1.5s;
+}
+
+.border-beam-slow::before {
+  animation-duration: 6s;
+}
+
+.border-beam-double::before {
+  background: linear-gradient(
+    var(--beam-angle, 135deg),
+    transparent 0%,
+    transparent 40%,
+    var(--beam-color, var(--accent, #6366f1)) 50%,
+    var(--beam-color-2, var(--accent-2, #8b5cf6)) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+}

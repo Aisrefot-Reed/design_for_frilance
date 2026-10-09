@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parallax</title>
+<link rel="stylesheet" href="../utils/animations.css">
+<link rel="stylesheet" href="parallax.css">
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; }
+  .parallax { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .parallax-bg { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+  .content { text-align: center; color: #fff; padding: 2rem; }
+  h1 { font-size: 3rem; margin: 0 0 1rem; }
+</style>
+</head>
+<body>
+  <div class="parallax parallax-fixed">
+    <div class="parallax-bg"></div>
+    <div class="parallax-content content">
+      <h1>Parallax</h1>
+      <p>Фон движется медленнее контента</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* Input — стилизованные поля ввода */
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--fg, #000);
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-md, 14px);
+  transition: all 0.2s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.form-input::placeholder {
+  color: var(--muted, #9ca3af);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent, #6366f1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Варианты */
+.form-input-error {
+  border-color: #ef4444;
+}
+
+.form-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input-success {
+  border-color: #10b981;
+}
+
+.form-input-success:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Размеры */
+.form-input-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.form-input-lg {
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+}

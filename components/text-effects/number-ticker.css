@@ -1,0 +1,33 @@
+/* Number Ticker — бегущие числа */
+
+.number-ticker {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--accent, #6366f1);
+}
+
+.number-ticker::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent, #6366f1);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Варианты */
+.number-ticker-large {
+  font-size: 3rem;
+}
+
+.number-ticker-small {
+  font-size: 1.5rem;
+}

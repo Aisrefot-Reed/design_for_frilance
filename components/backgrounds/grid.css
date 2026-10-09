@@ -1,0 +1,48 @@
+/* Grid Background — сетка на фоне */
+
+.grid-bg {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg, #0a0a0f);
+}
+
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--grid-color, rgba(255,255,255,0.05)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color, rgba(255,255,255,0.05)) 1px, transparent 1px);
+  background-size: var(--grid-size, 50px) var(--grid-size, 50px);
+  animation: grid-move 20s linear infinite;
+}
+
+.grid-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, var(--bg, #0a0a0f) 70%);
+}
+
+.grid-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(var(--grid-size, 50px), var(--grid-size, 50px)); }
+}
+
+/* Варианты */
+.grid-bg-small {
+  --grid-size: 25px;
+}
+
+.grid-bg-large {
+  --grid-size: 100px;
+}
+
+.grid-bg-colored {
+  --grid-color: var(--accent, rgba(99, 102, 241, 0.1));
+}

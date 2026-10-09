@@ -1,0 +1,45 @@
+/* File Drop — зона для загрузки файлов */
+
+.file-drop {
+  position: relative;
+  border: 2px dashed var(--border, #e5e7eb);
+  border-radius: var(--radius-lg, 24px);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.2s var(--ease, cubic-bezier(.22,1,.36,1));
+  cursor: pointer;
+}
+
+.file-drop:hover {
+  border-color: var(--accent, #6366f1);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.file-drop.dragover {
+  border-color: var(--accent, #6366f1);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.file-drop-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.file-drop-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.file-drop-hint {
+  color: var(--muted, #666);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.file-drop input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}

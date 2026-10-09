@@ -1,0 +1,93 @@
+/* Bento Grid — адаптивная сетка bento */
+
+.bento {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Автоматическая раскладка */
+.bento {
+  grid-template-columns: 1fr;
+}
+
+/* Планшет — 2 колонки */
+@media (min-width: 700px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-item-large {
+    grid-column: span 2;
+  }
+}
+
+/* Десктоп — 4 колонки */
+@media (min-width: 1000px) {
+  .bento {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .bento-item-wide {
+    grid-column: span 2;
+  }
+  .bento-item-tall {
+    grid-row: span 2;
+  }
+  .bento-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.bento-item {
+  background: var(--surface, #fff);
+  border-radius: var(--radius-lg, 24px);
+  padding: 1.5rem;
+  box-shadow: var(--shadow, 0 0 0 1px rgba(0,0,0,0.05));
+  transition: transform 0.2s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+}
+
+.bento-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.bento-item p {
+  margin: 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Варианты */
+.bento-item-dark {
+  background: var(--night, #1a1a1a);
+  color: #fff;
+}
+
+.bento-item-dark p {
+  color: rgba(255,255,255,0.6);
+}
+
+.bento-item-accent {
+  background: var(--accent, #6366f1);
+  color: #fff;
+}
+
+.bento-item-accent p {
+  color: rgba(255,255,255,0.8);
+}
+
+.bento-item-gradient {
+  background: linear-gradient(135deg, var(--accent, #6366f1), var(--accent-2, #8b5cf6));
+  color: #fff;
+}
+
+.bento-item-gradient p {
+  color: rgba(255,255,255,0.8);
+}

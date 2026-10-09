@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stepper</title>
+<link rel="stylesheet" href="../utils/animations.css">
+<link rel="stylesheet" href="stepper.css">
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f9fafb; }
+</style>
+</head>
+<body>
+  <div class="stepper">
+    <div class="stepper-step completed">
+      <div class="stepper-circle">✓</div>
+      <span class="stepper-label">Шаг 1</span>
+    </div>
+    <div class="stepper-line completed"></div>
+    <div class="stepper-step active">
+      <div class="stepper-circle">2</div>
+      <span class="stepper-label">Шаг 2</span>
+    </div>
+    <div class="stepper-line"></div>
+    <div class="stepper-step">
+      <div class="stepper-circle">3</div>
+      <span class="stepper-label">Шаг 3</span>
+    </div>
+  </div>
+</body>
+</html>

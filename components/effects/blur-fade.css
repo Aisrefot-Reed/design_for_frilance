@@ -1,0 +1,78 @@
+/* Blur Fade — появление с размытием */
+
+.blur-fade {
+  animation: blur-fade-in 0.8s var(--ease, cubic-bezier(.22,1,.36,1)) forwards;
+}
+
+@keyframes blur-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Варианты */
+.blur-fade-slow {
+  animation-duration: 1.5s;
+}
+
+.blur-fade-fast {
+  animation-duration: 0.3s;
+}
+
+.blur-fade-left {
+  animation-name: blur-fade-left;
+}
+
+@keyframes blur-fade-left {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+.blur-fade-right {
+  animation-name: blur-fade-right;
+}
+
+@keyframes blur-fade-right {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+.blur-fade-scale {
+  animation-name: blur-fade-scale;
+}
+
+@keyframes blur-fade-scale {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}

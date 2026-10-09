@@ -1,0 +1,62 @@
+/* Particles Background — частицы на фоне */
+
+.particles {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg, #0a0a0f);
+}
+
+.particles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 40% 70%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 20%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 80% 50%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 10% 80%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 90% 10%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 50% 90%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(2px 2px at 70% 40%, var(--particle-color, #fff) 0%, transparent 100%);
+  background-size: 200% 200%;
+  opacity: 0.3;
+  animation: particles-float 30s linear infinite;
+}
+
+.particles::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, var(--bg, #0a0a0f) 70%);
+}
+
+.particles > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes particles-float {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+/* Варианты */
+.particles-dense::before {
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 40%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 60%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 80%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 90%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 10%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 30%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 50%, var(--particle-color, #fff) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 70%, var(--particle-color, #fff) 0%, transparent 100%);
+  background-size: 150% 150%;
+}
+
+.particles-colored {
+  --particle-color: var(--accent, #6366f1);
+}

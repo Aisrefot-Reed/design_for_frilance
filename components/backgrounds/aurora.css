@@ -1,0 +1,65 @@
+/* Aurora Background — анимированный градиентный фон */
+
+.aurora {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg, #0a0a0f);
+}
+
+.aurora::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, var(--aurora-1, #6366f1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, var(--aurora-2, #8b5cf6) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 50% 80%, var(--aurora-3, #06b6d4) 0%, transparent 50%);
+  filter: blur(60px);
+  opacity: 0.6;
+  animation: aurora-move 20s ease-in-out infinite alternate;
+}
+
+.aurora::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, var(--bg, #0a0a0f) 70%);
+}
+
+.aurora > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes aurora-move {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5%, 5%) rotate(5deg); }
+  50% { transform: translate(-5%, 10%) rotate(-5deg); }
+  75% { transform: translate(10%, -5%) rotate(3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Варианты цветов */
+.aurora-warm {
+  --aurora-1: #f59e0b;
+  --aurora-2: #ef4444;
+  --aurora-3: #f97316;
+}
+
+.aurora-cool {
+  --aurora-1: #3b82f6;
+  --aurora-2: #06b6d4;
+  --aurora-3: #8b5cf6;
+}
+
+.aurora-nature {
+  --aurora-1: #10b981;
+  --aurora-2: #059669;
+  --aurora-3: #34d399;
+}
+
+.aurora-sunset {
+  --aurora-1: #f43f5e;
+  --aurora-2: #f97316;
+  --aurora-3: #fbbf24;
+}

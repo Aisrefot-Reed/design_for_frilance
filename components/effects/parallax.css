@@ -1,0 +1,29 @@
+/* Parallax — параллакс эффект */
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -20%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Варианты */
+.parallax-fixed .parallax-bg {
+  background-attachment: fixed;
+}
+
+.parallax-slow .parallax-bg {
+  transition: transform 0.3s var(--ease, cubic-bezier(.22,1,.36,1));
+}

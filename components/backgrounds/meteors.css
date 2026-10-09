@@ -1,0 +1,46 @@
+/* Meteors Background — падающие метеоры */
+
+.meteors {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg, #0a0a0f);
+}
+
+.meteors::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(45deg, transparent 40%, var(--meteor-color, #fff) 50%, transparent 60%),
+    linear-gradient(45deg, transparent 40%, var(--meteor-color, #fff) 50%, transparent 60%),
+    linear-gradient(45deg, transparent 40%, var(--meteor-color, #fff) 50%, transparent 60%);
+  background-size: 200% 200%;
+  background-position: 0% 0%, 50% 50%, 100% 100%;
+  opacity: 0.4;
+  animation: meteors-fall 8s linear infinite;
+}
+
+.meteors::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0%, var(--bg, #0a0a0f) 70%);
+}
+
+.meteors > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes meteors-fall {
+  0% { background-position: 0% -100%, 50% -50%, 100% 0%; }
+  100% { background-position: 0% 100%, 50% 50%, 100% 100%; }
+}
+
+.meteors-slow::before {
+  animation-duration: 15s;
+}
+
+.meteors-fast::before {
+  animation-duration: 4s;
+}

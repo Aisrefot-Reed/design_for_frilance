@@ -1,0 +1,39 @@
+/* Shimmer Text — переливающийся текст */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--shimmer-base, #fff) 0%,
+    var(--shimmer-highlight, #6366f1) 50%,
+    var(--shimmer-base, #fff) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Варианты */
+.shimmer-slow {
+  animation-duration: 5s;
+}
+
+.shimmer-fast {
+  animation-duration: 1.5s;
+}
+
+.shimmer-gold {
+  --shimmer-base: #fbbf24;
+  --shimmer-highlight: #f59e0b;
+}
+
+.shimmer-silver {
+  --shimmer-base: #e5e7eb;
+  --shimmer-highlight: #9ca3af;
+}

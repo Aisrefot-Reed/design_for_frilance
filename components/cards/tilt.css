@@ -1,0 +1,58 @@
+/* Tilt Card — карточка с наклоном при наведении */
+
+.tilt {
+  position: relative;
+  background: var(--surface, #fff);
+  border-radius: var(--radius-lg, 24px);
+  padding: 1.5rem;
+  transform-style: preserve-3d;
+  transition: transform 0.3s var(--ease, cubic-bezier(.22,1,.36,1));
+}
+
+.tilt:hover {
+  transform: perspective(1000px) rotateX(var(--rx, 5deg)) rotateY(var(--ry, -5deg)) scale(1.02);
+}
+
+.tilt h3 {
+  position: relative;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.tilt p {
+  position: relative;
+  margin: 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Варианты */
+.tilt-dark {
+  background: var(--night, #1a1a1a);
+  color: #fff;
+}
+
+.tilt-dark p {
+  color: rgba(255,255,255,0.6);
+}
+
+.tilt-accent {
+  background: var(--accent, #6366f1);
+  color: #fff;
+}
+
+.tilt-accent p {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Сильный наклон */
+.tilt-strong:hover {
+  transform: perspective(1000px) rotateX(var(--rx, 10deg)) rotateY(var(--ry, -10deg)) scale(1.05);
+}
+
+/* Слабый наклон */
+.tilt-weak:hover {
+  transform: perspective(1000px) rotateX(var(--rx, 2deg)) rotateY(var(--ry, -2deg)) scale(1.01);
+}
