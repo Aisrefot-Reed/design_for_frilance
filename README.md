@@ -8,63 +8,55 @@
 
 ```
 components/
-├── backgrounds/      — фоновые эффекты (4 компонента)
+├── backgrounds/      — фоновые эффекты (4)
 │   ├── aurora.css       — анимированный градиентный фон
 │   ├── particles.css    — частицы на фоне
 │   ├── meteors.css      — падающие метеоры
 │   └── grid.css         — анимированная сетка
-├── text-effects/     — текстовые эффекты (4 компонента)
+├── text-effects/     — текстовые эффекты (4)
 │   ├── typewriter.css   — эффект печатной машинки
 │   ├── shimmer.css      — переливающийся текст
 │   ├── flip-words.css   — переворачивающиеся слова
 │   └── number-ticker.css — бегущие числа
-├── cards/            — карточки и layout (4 компонента)
+├── cards/            — карточки и layout (4)
 │   ├── bento.css        — адаптивная сетка bento
 │   ├── spotlight.css    — карточка с эффектом прожектора
-│   ├── tilt.css         — карточка с наклоном при наведении
+│   ├── tilt.css         — карточка с наклоном
 │   └── glare.css        — карточка с бликом
-├── navigation/       — навигация (2 компонента)
+├── navigation/       — навигация (2)
 │   ├── floating-nav.css — плавающая навигация
 │   └── morphing-menu.css — трансформирующееся меню
-├── effects/          — визуальные эффекты (3 компонента)
+├── effects/          — визуальные эффекты (7)
 │   ├── border-beam.css  — бегущий луч по границе
 │   ├── blur-fade.css    — появление с размытием
-│   └── parallax.css     — параллакс эффект
-├── forms/            — формы (3 компонента)
-│   ├── input.css        — стилизованные поля ввода
-│   ├── file-drop.css    — зона для загрузки файлов
+│   ├── parallax.css     — параллакс
+│   ├── marquee.css      — бегущая строка
+│   ├── orbiting-circles.css — орбитальные круги
+│   ├── sticky-scroll.css — липкий скролл
+│   └── device-mockup.css — мокап устройства
+├── forms/            — формы (3)
+│   ├── input.css        — поля ввода
+│   ├── file-drop.css    — загрузка файлов
 │   └── stepper.css      — пошаговый ввод
-├── sections/         — готовые секции (4 компонента)
+├── sections/         — готовые секции (5)
 │   ├── hero.css         — первый экран
-│   ├── pricing.css      — секция цен
+│   ├── pricing.css      — цены
 │   ├── testimonial.css  — отзывы
-│   └── contact.css      — контакты
-└── utils/            — утилиты (3 компонента)
+│   ├── contact.css      — контакты
+│   └── logo-cloud.css   — облако логотипов
+└── utils/            — утилиты (3)
     ├── animations.css   — базовые анимации
     ├── responsive.css   — адаптивные утилиты
-    └── accessibility.css — утилиты доступности
+    └── accessibility.css — доступность
 ```
+
+**Итого: 32 компонента.**
 
 ## Использование
-
-### Вариант 1: Подключить всё
-
-```html
-<link rel="stylesheet" href="index.css">
-```
-
-### Вариант 2: Подключить только нужное
 
 ```html
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="components/backgrounds/aurora.css">
-<link rel="stylesheet" href="components/sections/hero.css">
-```
-
-### Вариант 3: Исппользовать отдельные компоненты
-
-```html
-<link rel="stylesheet" href="components/utils/animations.css">
 <link rel="stylesheet" href="components/cards/bento.css">
 ```
 
@@ -72,9 +64,19 @@ components/
 
 1. **Без JS** — только HTML/CSS, никаких зависимостей
 2. **Адаптивность** — mobile-first, брейкпоинты 700px и 1000px
-3. **Доступность** — `prefers-reduced-motion`, ARIA-атрибуты, контраст
-4. **Композируемость** — компоненты независимы, можно комбинировать
+3. **Доступность** — `prefers-reduced-motion`, ARIA, контраст
+4. **Композируемость** — компоненты независимы, комбинируются
 5. **Производительность** — CSS-only анимации, transform/opacity
+
+## Интеграция с генератором
+
+Библиотека подключена к пайплайну генерации сайтов:
+
+- агент выбирает компоненты по характеру бизнеса
+- CSS выбранных компонентов встраивается инлайном
+- сайт остаётся самодостаточным (один HTML + фото)
+
+Модуль интеграции: `libcomponents.py` в репозитории пайплайна.
 
 ## Лицензия
 

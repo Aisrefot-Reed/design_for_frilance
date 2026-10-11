@@ -1,0 +1,82 @@
+/* Sticky Scroll — липкий скролл */
+
+.sticky-scroll {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1000px) {
+  .sticky-scroll {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.sticky-scroll-aside {
+  position: relative;
+}
+
+@media (min-width: 1000px) {
+  .sticky-scroll-aside {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.sticky-scroll-aside h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin: 0 0 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.sticky-scroll-aside p {
+  color: var(--muted, #666);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.sticky-scroll-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sticky-step {
+  background: var(--surface, #fff);
+  border-radius: var(--radius-lg, 24px);
+  padding: 1.75rem;
+  box-shadow: var(--shadow, 0 0 0 1px rgba(0,0,0,0.05));
+}
+
+.sticky-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent, #6366f1);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.sticky-step h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.sticky-step p {
+  margin: 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
